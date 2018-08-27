@@ -4,12 +4,12 @@
 ## ts Usage
 
 ```ts
-DebugUtil.InfiniteLoopDetector.detect(
+DebugUtil.InfiniteLoopDetector.detect.call(this,
     `
-      while (true) {
-      }
+        while (true) {
+        }
     `
-)
+))
 ```
 
 ## js Usage 
