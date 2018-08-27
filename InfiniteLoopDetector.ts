@@ -21,12 +21,12 @@ module DebugUtil {
 			// this is not a strong regex, but enough to use at the time
 			return codeStr.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, (loopHead) => {
 				const id = this._id++ % Number.MAX_VALUE;
-				return `this.infiniteLoopDetector(${id});${loopHead}this.infiniteLoopDetector(${id});`
+				return `DebugUtil.InfiniteLoopDetector.infiniteLoopDetector(${id});${loopHead}DebugUtil.InfiniteLoopDetector.infiniteLoopDetector(${id});`
 			})
 		}
 
 		private static unwrap = function (codeStr: string) {
-			return codeStr.replace(/this.infiniteLoopDetector\([0-9]*?\);/g, '')
+			return codeStr.replace(/DebugUtil.InfiniteLoopDetector.infiniteLoopDetector\([0-9]*?\);/g, '')
 		}
 
 
