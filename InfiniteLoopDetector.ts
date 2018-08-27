@@ -31,7 +31,7 @@ module DebugUtil {
 
 
 		public static detect(code: string) {
-			const codeStr = this.wrap(code)
+			const codeStr = DebugUtil.InfiniteLoopDetector.wrap(code)
 			// Can only wrap plain code string, no function or other things, or it will throw
 			// There is also an `unwrap` method to restore the code to the previous shape
 			try {
