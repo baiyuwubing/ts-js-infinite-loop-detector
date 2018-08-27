@@ -1,13 +1,23 @@
 # Infinite Loop Detector
 
-## A mini library to detect infinite loop in Javascript
+## A mini library to detect infinite loop in TypeScript/JavaScript
+## ts Usage
 
-## Usage
+```ts
+DebugUtil.InfiniteLoopDetector.detect(
+    `
+      while (true) {
+      }
+    `
+)
+```
+
+## js Usage 
 
 ```js
 var code = `
 for (;;) {
-  console.log(1)
+    console.log(1)
 }`
 
 code = infiniteLoopDetector.wrap(code)
@@ -15,11 +25,11 @@ code = infiniteLoopDetector.wrap(code)
 // There is also an `unwrap` method to restore the code to the previous shape
 
 try {
-  eval(code)
+    eval(code)
 } catch(e) {
-  if (e.type === 'InfiniteLoopError') {
-    console.log('infinite loop detected')
-  }
+    if (e.type === 'InfiniteLoopError') {
+        console.log('infinite loop detected')
+    }
 }
 ```
 ## Related blog post
