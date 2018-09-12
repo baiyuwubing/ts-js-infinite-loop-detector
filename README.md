@@ -12,6 +12,14 @@ DebugUtil.InfiniteLoopDetector.detect.call(this,
 ))
 ```
 
+or
+```ts
+const id = DebugUtil.InfiniteLoopDetector.id;
+while (true) {
+    DebugUtil.InfiniteLoopDetector.infiniteLoopDetector(id);
+}
+```
+
 ## js Usage 
 
 ```js
